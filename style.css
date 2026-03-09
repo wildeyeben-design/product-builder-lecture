@@ -288,6 +288,73 @@ section {
     margin-bottom: 1rem;
 }
 
+/* Tech Data Board */
+.tech-data {
+    background-color: var(--background-color);
+}
+
+.board-container {
+    max-width: 1000px;
+    margin: 0 auto;
+    background: var(--card-bg);
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+    overflow: hidden;
+}
+
+.tech-board {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: left;
+}
+
+.tech-board th, .tech-board td {
+    padding: 1.2rem;
+    border-bottom: 1px solid #eee;
+}
+
+.tech-board th {
+    background-color: #f8f9fa;
+    font-weight: 700;
+    color: var(--secondary-color);
+    text-transform: uppercase;
+    font-size: 0.9rem;
+}
+
+.tech-board tr:last-child td {
+    border-bottom: none;
+}
+
+.tech-board td a {
+    text-decoration: none;
+    color: var(--text-color);
+    font-weight: 500;
+    transition: color 0.3s;
+}
+
+.tech-board td a:hover {
+    color: var(--primary-color);
+}
+
+/* Badges */
+.badge {
+    padding: 0.3rem 0.8rem;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: white;
+}
+
+.badge.electric { background-color: #ffc107; color: #333; }
+.badge.mechanical { background-color: #28a745; }
+.badge.fire { background-color: #dc3545; }
+
+/* Responsive Board */
+@media (max-width: 600px) {
+    .tech-board th:nth-child(1), .tech-board td:nth-child(1) { display: none; }
+    .tech-board th:nth-child(4), .tech-board td:nth-child(4) { display: none; }
+}
+
 /* Contact Form */
 .contact-container {
     max-width: 600px;
