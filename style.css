@@ -1,22 +1,22 @@
 :root {
-    --primary-color: #0056b3;
-    --secondary-color: #6c757d;
-    --background-color: #ffffff;
-    --text-color: #333333;
-    --card-bg: #f8f9fa;
-    --nav-bg: rgba(255, 255, 255, 0.95);
-    --hero-bg: #e9ecef;
+    --primary-color: #007bff; /* 더 밝고 생동감 있는 블루 */
+    --secondary-color: #868e96;
+    --background-color: #fdfdfd; /* 아주 연한 미색으로 깔끔하게 */
+    --text-color: #212529;
+    --card-bg: #ffffff; /* 순백색 카드 */
+    --nav-bg: rgba(255, 255, 255, 0.98);
+    --hero-bg: #f8f9fa;
     --transition-speed: 0.3s;
 }
 
 [data-theme="dark"] {
-    --primary-color: #3786ff;
+    --primary-color: #4dabf7;
     --secondary-color: #adb5bd;
-    --background-color: #121212;
-    --text-color: #e0e0e0;
-    --card-bg: #1e1e1e;
-    --nav-bg: rgba(18, 18, 18, 0.95);
-    --hero-bg: #1a1a1a;
+    --background-color: #1a1a1a;
+    --text-color: #f8f9fa;
+    --card-bg: #2d2d2d;
+    --nav-bg: rgba(26, 26, 26, 0.98);
+    --hero-bg: #121212;
 }
 
 * {
@@ -45,7 +45,7 @@ nav {
     background-color: var(--nav-bg);
     padding: 1rem 0;
     z-index: 1000;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    box-shadow: 0 1px 15px rgba(0,0,0,0.05); /* 그림자를 더 가볍게 */
 }
 
 .nav-container {
@@ -96,7 +96,8 @@ nav {
 /* Hero Section */
 .hero {
     height: 100vh;
-    background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=1920&q=80');
+    /* 오버레이 투명도를 낮추어 더 밝게 변경 (0.5 -> 0.25) */
+    background: linear-gradient(rgba(0,0,0,0.25), rgba(0,0,0,0.25)), url('https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=1920&q=80');
     background-size: cover;
     background-position: center;
     display: flex;
@@ -111,6 +112,7 @@ nav {
     font-size: 3.5rem;
     margin-bottom: 1.5rem;
     font-weight: 700;
+    text-shadow: 0 2px 10px rgba(0,0,0,0.2); /* 텍스트 가독성 확보 */
 }
 
 .hero-content p {
@@ -119,6 +121,7 @@ nav {
     max-width: 800px;
     margin-left: auto;
     margin-right: auto;
+    text-shadow: 0 1px 5px rgba(0,0,0,0.2);
 }
 
 /* Buttons */
@@ -136,17 +139,20 @@ nav {
 .btn.primary {
     background-color: var(--primary-color);
     color: white;
+    box-shadow: 0 4px 15px rgba(0,123,255,0.3); /* 버튼에 화사한 광채 효과 */
 }
 
 .btn.primary:hover {
-    filter: brightness(1.2);
+    filter: brightness(1.1);
+    transform: translateY(-2px);
 }
 
 .btn.secondary {
-    background-color: transparent;
+    background-color: rgba(255, 255, 255, 0.2);
     border: 2px solid white;
     color: white;
     margin-left: 1rem;
+    backdrop-filter: blur(5px); /* 뒤 배경이 비치는 모던한 느낌 */
 }
 
 .btn.secondary:hover {
@@ -168,6 +174,7 @@ nav {
 .about-text p {
     font-size: 1.2rem;
     margin-bottom: 3rem;
+    color: #495057; /* 텍스트 색상을 약간 부드럽게 */
 }
 
 .about-stats {
@@ -222,13 +229,15 @@ section {
 .feature-card {
     background-color: var(--card-bg);
     padding: 3rem;
-    border-radius: 10px;
+    border-radius: 12px; /* 곡률을 더 주어 부드럽게 */
     text-align: center;
-    transition: transform 0.3s;
+    transition: all 0.3s;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.03); /* 아주 가벼운 그림자 */
 }
 
 .feature-card:hover {
     transform: translateY(-10px);
+    box-shadow: 0 15px 40px rgba(0,0,0,0.08);
 }
 
 .feature-card i {
@@ -243,7 +252,7 @@ section {
 
 /* Services */
 .services {
-    background-color: var(--hero-bg);
+    background-color: #f8f9fa; /* 밝은 회색 배경으로 구분을 줌 */
 }
 
 .service-list {
@@ -258,6 +267,10 @@ section {
     display: flex;
     align-items: center;
     gap: 4rem;
+    background: var(--card-bg); /* 아이템 배경을 흰색으로 */
+    padding: 2rem;
+    border-radius: 15px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.02);
 }
 
 .service-item:nth-child(even) {
@@ -286,29 +299,36 @@ section {
     margin-top: 3rem;
     display: flex;
     flex-direction: column;
-    gap: 1rem;
+    gap: 1.2rem;
 }
 
 #contact-form input, #contact-form textarea {
     padding: 1rem;
-    border-radius: 5px;
-    border: 1px solid var(--secondary-color);
-    background-color: var(--card-bg);
+    border-radius: 8px;
+    border: 1px solid #dee2e6;
+    background-color: #ffffff;
     color: var(--text-color);
+    transition: border-color 0.3s;
+}
+
+#contact-form input:focus, #contact-form textarea:focus {
+    border-color: var(--primary-color);
+    outline: none;
 }
 
 /* Footer */
 footer {
     padding: 3rem;
     text-align: center;
-    background-color: var(--card-bg);
-    border-top: 1px solid rgba(0,0,0,0.1);
+    background-color: #ffffff;
+    border-top: 1px solid #f1f3f5;
 }
 
 /* Responsive */
 @media (max-width: 768px) {
     .hero-content h1 { font-size: 2.5rem; }
-    .service-item { flex-direction: column !important; }
+    .service-item { flex-direction: column !important; gap: 2rem; }
     .service-item img { width: 100%; }
     .nav-links { display: none; }
+    .about-stats { gap: 2rem; flex-wrap: wrap; }
 }
