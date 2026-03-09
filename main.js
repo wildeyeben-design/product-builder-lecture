@@ -1,11 +1,10 @@
-const generateBtn = document.getElementById('generate-btn');
-const numbersContainer = document.getElementById('numbers-container');
 const themeToggle = document.getElementById('theme-toggle');
+const contactForm = document.getElementById('contact-form');
 
 // Theme Logic
 const currentTheme = localStorage.getItem('theme') || 'light';
 document.documentElement.setAttribute('data-theme', currentTheme);
-themeToggle.textContent = currentTheme === 'dark' ? 'Light Mode' : 'Dark Mode';
+updateThemeIcon(currentTheme);
 
 themeToggle.addEventListener('click', () => {
     let theme = document.documentElement.getAttribute('data-theme');
@@ -13,24 +12,37 @@ themeToggle.addEventListener('click', () => {
     
     document.documentElement.setAttribute('data-theme', newTheme);
     localStorage.setItem('theme', newTheme);
-    themeToggle.textContent = newTheme === 'dark' ? 'Light Mode' : 'Dark Mode';
+    updateThemeIcon(newTheme);
 });
 
-// Lotto Logic
-generateBtn.addEventListener('click', () => {
-    const numbers = new Set();
-    while (numbers.size < 6) {
-        const randomNumber = Math.floor(Math.random() * 45) + 1;
-        numbers.add(randomNumber);
+function updateThemeIcon(theme) {
+    const icon = themeToggle.querySelector('i');
+    if (theme === 'dark') {
+        icon.classList.remove('fa-moon');
+        icon.classList.add('fa-sun');
+    } else {
+        icon.classList.remove('fa-sun');
+        icon.classList.add('fa-moon');
     }
+}
 
-    numbersContainer.innerHTML = '';
-    const sortedNumbers = Array.from(numbers).sort((a, b) => a - b);
+// Contact Form Simulation
+if (contactForm) {
+    contactForm.addEventListener('submit', (e) => {
+        e.preventDefault();
+        const formData = new FormData(contactForm);
+        alert('문의가 성공적으로 접수되었습니다. 곧 연락드리겠습니다!');
+        contactForm.reset();
+    });
+}
 
-    for (const number of sortedNumbers) {
-        const numberEl = document.createElement('div');
-        numberEl.classList.add('number');
-        numberEl.textContent = number;
-        numbersContainer.appendChild(numberEl);
+// Navbar Scroll Effect
+window.addEventListener('scroll', () => {
+    const nav = document.querySelector('nav');
+    if (window.scrollY > 50) {
+        nav.style.padding = '0.5rem 0';
+        nav.style.backgroundColor = 'var(--nav-bg)';
+    } else {
+        nav.style.padding = '1rem 0';
     }
 });

@@ -1,18 +1,102 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lotto Number Generator</title>
+    <title>SmartFM Solutions | 지능형 시설관리 시스템</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
-    <button id="theme-toggle">Dark Mode</button>
-    <div class="container">
-        <h1>Lotto Number Generator</h1>
-        <button id="generate-btn">Generate Numbers</button>
-        <div id="numbers-container"></div>
-    </div>
+    <nav>
+        <div class="nav-container">
+            <div class="logo">SmartFM<span>Solutions</span></div>
+            <ul class="nav-links">
+                <li><a href="#home">홈</a></li>
+                <li><a href="#features">주요기능</a></li>
+                <li><a href="#services">서비스</a></li>
+                <li><a href="#contact">문의하기</a></li>
+            </ul>
+            <button id="theme-toggle" class="theme-btn"><i class="fas fa-moon"></i></button>
+        </div>
+    </nav>
+
+    <header id="home" class="hero">
+        <div class="hero-content">
+            <h1>미래를 여는 지능형 시설관리 플랫폼</h1>
+            <p>IoT와 AI 기술을 결합하여 건물의 효율을 극대화하고 관리 비용을 획기적으로 절감합니다.</p>
+            <div class="hero-btns">
+                <a href="#contact" class="btn primary">무료 데모 신청</a>
+                <a href="#features" class="btn secondary">더 알아보기</a>
+            </div>
+        </div>
+    </header>
+
+    <section id="features" class="features">
+        <div class="section-header">
+            <h2>주요 기능</h2>
+            <p>스마트한 관리를 위한 핵심 기술을 제공합니다.</p>
+        </div>
+        <div class="feature-grid">
+            <div class="feature-card">
+                <i class="fas fa-microchip"></i>
+                <h3>실시간 IoT 모니터링</h3>
+                <p>전국의 시설물 상태를 실시간으로 파악하고 이상 징후를 즉각 감지합니다.</p>
+            </div>
+            <div class="feature-card">
+                <i class="fas fa-bolt"></i>
+                <h3>에너지 최적화</h3>
+                <p>AI 알고리즘을 통한 전력 소비 패턴 분석으로 불필요한 에너지 낭비를 방지합니다.</p>
+            </div>
+            <div class="feature-card">
+                <i class="fas fa-shield-alt"></i>
+                <h3>예방 정비 시스템</h3>
+                <p>데이터 기반의 예측으로 고장 전 부품 교체 시기를 알려주어 가동 중단을 예방합니다.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="services" class="services">
+        <div class="container">
+            <div class="section-header">
+                <h2>서비스 영역</h2>
+            </div>
+            <div class="service-list">
+                <div class="service-item">
+                    <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=500&q=80" alt="Building">
+                    <div class="service-info">
+                        <h3>대형 빌딩 관리</h3>
+                        <p>복합 쇼핑몰, 오피스 빌딩의 통합 관제 시스템을 제공합니다.</p>
+                    </div>
+                </div>
+                <div class="service-item">
+                    <img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=500&q=80" alt="Factory">
+                    <div class="service-info">
+                        <h3>스마트 팩토리</h3>
+                        <p>제조 설비의 가동률 향상을 위한 정밀 모니터링을 지원합니다.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="contact">
+        <div class="contact-container">
+            <h2>지금 상담 받으세요</h2>
+            <p>귀사의 시설물 관리를 혁신할 준비가 되셨나요?</p>
+            <form id="contact-form">
+                <input type="text" placeholder="회사명" required>
+                <input type="email" placeholder="이메일" required>
+                <textarea placeholder="문의 내용" rows="5" required></textarea>
+                <button type="submit" class="btn primary">문의 보내기</button>
+            </form>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2026 SmartFM Solutions. All rights reserved.</p>
+    </footer>
+
     <script src="main.js"></script>
 </body>
 </html>
