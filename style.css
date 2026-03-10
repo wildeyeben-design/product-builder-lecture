@@ -305,13 +305,25 @@ section {
 .tech-board {
     width: 100%;
     border-collapse: collapse;
-    text-align: left;
+    text-align: center; /* 번호, 카테고리 등 중앙 정렬 */
 }
 
 .tech-board th, .tech-board td {
     padding: 1.2rem;
     border-bottom: 1px solid #eee;
+    white-space: nowrap; /* 텍스트 줄바꿈 방지 */
 }
+
+.tech-board th:nth-child(1), .tech-board td:nth-child(1) { width: 80px; } /* 번호 */
+.tech-board th:nth-child(2), .tech-board td:nth-child(2) { width: 120px; } /* 카테고리 */
+.tech-board th:nth-child(3), .tech-board td:nth-child(3) { 
+    text-align: left; 
+    white-space: normal; /* 제목은 줄바꿈 허용 */
+    width: auto; 
+} 
+.tech-board th:nth-child(4), .tech-board td:nth-child(4) { width: 100px; } /* 작성자 */
+.tech-board th:nth-child(5), .tech-board td:nth-child(5) { width: 120px; } /* 등록일 */
+.tech-board th:nth-child(6), .tech-board td:nth-child(6) { width: 80px; } /* 조회 */
 
 .tech-board th {
     background-color: #f8f9fa;
